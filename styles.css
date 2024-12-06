@@ -1,0 +1,293 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #003366;
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffcc00;  /* Accent color */
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;  /* Accent color */
+}
+
+.section {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+#home {
+    background-color: #003366;
+    color: white;
+}
+
+#formulas {
+    background-color: white;
+    color: #333;
+}
+
+#about {
+    background-color: #eaeaea;
+    color: #333;
+}
+
+h1, h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+#formulas {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+#formulas-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#formulas-list li {
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+/* Hover effect for each formula */
+#formulas-list li:hover {
+    background-color: #e2f4ff;
+    transform: scale(1.03);
+}
+
+/* Animations for sliding and fading in new formulas */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+#formulas-list li {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Hover effect on formula names */
+#formulas-list li strong:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Tooltip styling */
+#formulas-list li .tooltip {
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: 110%;
+    transform: translateY(-50%);
+    background-color: #222;
+    color: white;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 0.9em;
+    width: 200px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s; /* Smooth fade in/out */
+}
+
+/* Show tooltip on hover */
+#formulas-list li:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out; /* Smooth fade in */
+}
+
+/* Popup styling */
+.popup {
+    display: none; /* Hide by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup .popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 500px; /* Optional: control the size of the popup */
+}
+
+.popup h3 {
+    margin: 0;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.popup p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+.popup-close:hover {
+    color: #f00; /* Red color on hover */
+}
+
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+/* Style for the formula details */
+.formula-details {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: none; /* Initially hidden */
+}
+
+.formula-details h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.formula-details p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+#search {
+    padding: 10px;
+    width: 300px;
+    margin-top: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 1.1em;
+}
+/* Style for the search box */
+.search-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 2rem;
+}
+
+.search-container input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 2px solid #003366;
+    border-radius: 5px;
+    outline: none;
+    width: 200px;
+    transition: width 0.3s ease;
+}
+
+.search-container input:focus {
+    border-color: #ffcc00;  /* Accent color */
+    width: 250px;
+}
+
+@media (max-width: 768px) {
+    .search-container input {
+        width: 150px;
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 1rem;
+    }
+
+    .section {
+        padding: 2rem 1rem;
+    }
+
+    h1, h2 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
