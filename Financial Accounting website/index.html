@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Financial Accounting Formulas</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+
+</head>
+<body>
+    <header>
+    <div class="logo">FinFormulas</div>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#formulas">Formulas</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </nav>
+    <!-- Search box -->
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Search for a formula..." oninput="filterFormulas()">
+    </div>
+
+</header>
+    <!-- Section for displaying filtered formula details -->
+    <div id="formula-details" class="formula-details" style="display: none;">
+        <h3 id="formula-name"></h3>
+        <p id="formula-description"></p>
+        <p><strong>Use Case Example:</strong> <span id="formula-example"></span></p>
+    </div>
+    <!-- Introduction Section -->
+    <section id="home" class="section">
+        <h1>Comprehensive Financial Accounting Formulas</h1>
+        <p>This website provides a collection of essential financial accounting formulas, along with detailed descriptions and real-world examples to help you understand their applications.</p>
+    </section>
+
+    <!-- Formula Display Section -->
+    <section id="formulas" class="section">
+        <h2>Key Financial Accounting Formulas</h2>
+        <ul id="formulas-list" class="formulas-list">
+            <!-- Formula items will be dynamically inserted here from the Excel file -->
+        </ul>
+    </section>
+    <!-- Formula Details Popup Section -->
+    <div id="formula-popup" class="popup">
+        <div class="popup-content">
+            <span id="close-popup" class="close">&times;</span>
+            <h3 id="popup-formula-name"></h3>
+            <p id="popup-formula-description"></p>
+            <p><strong>Use Case Example:</strong> <span id="popup-formula-example"></span></p>
+        </div>
+    </div>
+
+    <section id="about" class="section">
+        <h2>About This Site</h2>
+        <p>This website provides essential financial accounting formulas for students, professionals, and anyone interested in learning more about financial analysis and accounting.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Financial Formulas. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
